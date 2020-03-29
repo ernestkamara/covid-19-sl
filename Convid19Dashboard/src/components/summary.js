@@ -1,16 +1,16 @@
 import React from "react"
 import { withStyles } from "@material-ui/core/styles"
-import {
-  Card,
-  CardHeader,
-  CardContent,
-  Divider,
-  Typography,
-} from "@material-ui/core"
+import { Typography } from "@material-ui/core"
 
-const useStyles = theme => ({
+import CustomCard from "../components/custom-card"
+
+const useStyles = () => ({
+  root: {
+    backgroundColor: "#00695c",
+  },
   title: {
-    fontSize: 45,
+    fontSize: 20,
+    color: "#ffffff",
   },
 })
 
@@ -26,27 +26,23 @@ class Summary extends React.Component {
   }
 
   render() {
-    const { classes, title } = this.props
+    const { title } = this.props
     const { reports } = this.state
     return (
-      <Card>
-        <CardHeader title={title} align="center" classes={classes}></CardHeader>
-        <Divider variant="middle" />
-        <CardContent>
-          <Typography variant="h1" align="center">
-            {reports.confirmed}
-          </Typography>
-          <Typography align="center">Confirmed</Typography>
-          <Typography variant="h1" align="center">
-            {reports.recovered}
-          </Typography>
-          <Typography align="center">Recovered</Typography>
-          <Typography variant="h1" align="center">
-            {reports.deaths}
-          </Typography>
-          <Typography align="center">Deaths</Typography>
-        </CardContent>
-      </Card>
+      <CustomCard title={title}>
+        <Typography variant="h4" align="center">
+          {reports.confirmed}
+        </Typography>
+        <Typography align="center">Confirmed</Typography>
+        <Typography variant="h4" align="center">
+          {reports.recovered}
+        </Typography>
+        <Typography align="center">Recovered</Typography>
+        <Typography variant="h4" align="center">
+          {reports.deaths}
+        </Typography>
+        <Typography align="center">Deaths</Typography>
+      </CustomCard>
     )
   }
 }

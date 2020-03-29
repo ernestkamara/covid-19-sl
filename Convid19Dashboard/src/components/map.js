@@ -24,7 +24,6 @@ class Map extends React.Component {
       .on("value", function(snapshot) {
         var data = snapshot.val()
         const option = JSON.parse(JSON.stringify(context.state.option))
-        console.log(data)
         option.series[0].data = data
         data.forEach(entry => {
           if (entry.value > max) max = entry.value
@@ -121,7 +120,7 @@ class Map extends React.Component {
             notMerge={true}
             lazyUpdate={true}
             option={this.state.option}
-            style={{ height: "500px", width: "100%" }}
+            style={{ height: "450px", width: "100%" }}
             className="react_for_echarts"
           />
         </CardContent>
