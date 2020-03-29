@@ -42,13 +42,13 @@ const IndexPage = () => {
       >
         <Box flexGrow={1} p={1}>
           <Summary
-            title={"Sierra Leone Summary"}
+            title={"Sierra Leone Cases"}
             firebaseConnectionSetup={firebaseConnection("/local-summary")}
           />
         </Box>
         <Box flexGrow={1} p={1}>
           <Summary
-            title={"Global Summary"}
+            title={"Global Cases"}
             firebaseConnectionSetup={firebaseConnection("/global-summary")}
           />
         </Box>
