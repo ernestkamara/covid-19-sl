@@ -1,6 +1,6 @@
 import React from "react"
 import { Box } from "@material-ui/core"
-// import { Link } from "gatsby"
+import useMediaQuery from "@material-ui/core/useMediaQuery"
 
 import Map from "../components/map"
 import Layout from "../components/layout"
@@ -24,40 +24,51 @@ const firebaseConnection = key => {
           recovered: data.recovered.value,
           deaths: data.deaths.value,
         }
-        // console.log(res.data);
         context.setState({ reports })
-        // ...
       })
   }
 }
 
-const IndexPage = () => (
-  <Layout>
-    {/* <SEO title="Home" /> */}
-    <Box display="flex" flexDirection="row" p={1} m={1}>
-      <Box flexGrow={1} p={1}>
-        <Summary
-          title={"Sierra Leone Summary"}
-          firebaseConnectionSetup={firebaseConnection("/local-summary")}
-        />
-      </Box>
-      <Box flexGrow={1} p={1}>
-        <Summary
-          title={"Global Summary"}
-          firebaseConnectionSetup={firebaseConnection("/global-summary")}
-        />
-      </Box>
+const IndexPage = () => {
+  const matches = useMediaQuery("(min-width:600px)")
+  return (
+    <Layout>
+      {/* <SEO title="Home" /> */}
+      <Box
+        display="flex"
+        flexDirection={matches ? "row" : "column"}
+        p={1}
+        m={1}
+      >
+        <Box flexGrow={1} p={1}>
+          <Summary
+            title={"Sierra Leone Summary"}
+            firebaseConnectionSetup={firebaseConnection("/local-summary")}
+          />
+        </Box>
+        <Box flexGrow={1} p={1}>
+          <Summary
+            title={"Global Summary"}
+            firebaseConnectionSetup={firebaseConnection("/global-summary")}
+          />
+        </Box>
 
-      <Box flexGrow={1} p={1}>
-        <NewsFeed />
+        <Box flexGrow={1} p={1}>
+          <NewsFeed />
+        </Box>
       </Box>
-    </Box>
-    <Box display="flex" flexDirection="row" p={1} m={1}>
-      <Box flexGrow={1} p={1}>
-        <Map />
+      <Box
+        display="flex"
+        flexDirection={matches ? "row" : "column"}
+        p={1}
+        m={1}
+      >
+        <Box flexGrow={1} p={1}>
+          <Map />
+        </Box>
       </Box>
-    </Box>
-  </Layout>
-)
+    </Layout>
+  )
+}
 
 export default IndexPage
