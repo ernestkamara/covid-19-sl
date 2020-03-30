@@ -1,6 +1,6 @@
 
 # Coronavirus in Sierra Leone
-![](https://github.com/ernestkamara/covid-19-sl/workflows/.github/workflows/main.yml/badge.svg)
+![Node.js CI](https://github.com/ernestkamara/covid-19-sl/workflows/Node.js%20CI/badge.svg)
 
 Dashboard for Coronavirus in Sierra Leone
 
