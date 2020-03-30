@@ -4,8 +4,6 @@ import useMediaQuery from "@material-ui/core/useMediaQuery"
 
 import Map from "../components/map"
 import Layout from "../components/layout"
-// import Image from "../components/image"
-// import SEO from "../components/seo"
 import Summary from "../components/Summary"
 import NewsFeed from "../components/news-feed"
 
@@ -17,7 +15,6 @@ const firebaseConnection = key => {
       .database()
       .ref(key)
       .on("value", function(snapshot) {
-        // var username = (snapshot.val() && snapshot.val().username) || 'Anonymous';
         var data = snapshot.val()
         var reports = {
           confirmed: data.confirmed.value,
@@ -33,7 +30,6 @@ const IndexPage = () => {
   const matches = useMediaQuery("(min-width:600px)")
   return (
     <Layout>
-      {/* <SEO title="Home" /> */}
       <Box
         display="flex"
         flexDirection={matches ? "row" : "column"}
