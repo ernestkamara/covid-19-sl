@@ -23,3 +23,11 @@ jobs:
         args: deploy --only hosting
       env:
         FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
+        FB_API_KEY: ${{ secrets.FB_API_KEY }}
+        FB_AUTH_DOMAIN: ${{ secrets.FB_AUTH_DOMAIN }}
+        FB_DB_URL: ${{ secrets.FB_DB_URL }}
+        FB_PROJECT_ID: ${{ secrets.FB_PROJECT_ID }}
+        FB_STORAGE_BUCKET: ${{ secrets.FB_STORAGE_BUCKET }}
+        FB_MESSAGING_SENDER_ID: ${{ secrets.FB_MESSAGING_SENDER_ID }}
+        FB_APP_ID: ${{ secrets.FB_APP_ID }}
+        FB_MEASUREMENT_ID: ${{ secrets.FB_MEASUREMENT_ID }}
