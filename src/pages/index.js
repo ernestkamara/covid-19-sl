@@ -49,9 +49,9 @@ const IndexPage = () => {
           />
         </Box>
 
-        <Box flexGrow={1} p={1}>
+        {/* <Box flexGrow={1} p={1}>
           <NewsFeed />
-        </Box>
+        </Box> */}
       </Box>
       <Box
         display="flex"
