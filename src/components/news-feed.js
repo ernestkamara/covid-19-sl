@@ -1,5 +1,4 @@
 import React from "react"
-import { Card, CardHeader, CardContent, Divider } from "@material-ui/core"
 import CustomCard from "../components/custom-card"
 
 class NewsFeed extends React.Component {
