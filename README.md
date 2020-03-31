@@ -34,6 +34,26 @@ Open up a new tab in your browser and navigate to http://localhost:8000/
 
 
 
+### Backend
+- Firebase firestore
+- AWS for cloud functions
+
+### Frontend
+- Gatsby
+
+
+### TODO
+- [x] Setup project
+- [ ] Sierra Leone Cases Overview
+- [ ] Global Cases Overview
+- [ ] Symptoms Registration
+- [ ] Symptoms Overview
+- [ ] News Feed
+- [ ] Legal and Terms
+- [ ] Contact/Feedback form
+- [ ] Setup production env
+- [ ] Deploy to production
+
 # Contributing
 Feel free to contribute if you want to add more feeds, improve code or fix bugs !
 
