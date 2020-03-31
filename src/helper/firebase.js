@@ -2,17 +2,16 @@ import firebase from "firebase/app"
 import "firebase/database"
 
 const firebaseConfig = {
-  apiKey: "AIzaSyDZxeXYx0kmWwsMH-TzS6UjWYZklqmpK7o",
-  authDomain: "covid-19-sl-f4c23.firebaseapp.com",
-  databaseURL: "https://covid-19-sl-f4c23.firebaseio.com",
-  projectId: "covid-19-sl-f4c23",
-  storageBucket: "covid-19-sl-f4c23.appspot.com",
-  messagingSenderId: "60448121266",
-  appId: "1:60448121266:web:60a4a72baf3251d2c904ab",
-  measurementId: "G-BWCDWCSZP5",
+  apiKey: process.env.FB_API_KEY,
+  authDomain: process.env.FB_AUTH_DOMAIN,
+  databaseURL: process.env.FB_DB_URL,
+  projectId: process.env.FB_PROJECT_ID,
+  storageBucket: process.env.FB_STORAGE_BUCKET,
+  messagingSenderId: process.env.FB_MESSAGING_SENDER_ID,
+  appId: process.env.FB_APP_ID,
+  measurementId: process.env.FB_MEASUREMENT_ID,
 }
 // Initialize Firebase
 firebase.initializeApp(firebaseConfig)
-// firebase.analytics();
 
 export default firebase
