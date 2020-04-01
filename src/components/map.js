@@ -44,7 +44,6 @@ class Map extends React.Component {
     return {
       title: {
         text: "COVID-19 Cases",
-        subtext: "COVID-19 Case",
         left: "center",
       },
       tooltip: {
@@ -101,8 +100,7 @@ class Map extends React.Component {
             { name: "Moyamba", value: 0 },
             { name: "Pujehun", value: 0 },
             { name: "Bo", value: 0 },
-            { name: "Western Rural", value: 0 },
-            { name: "Western Urban", value: 0 },
+            { name: "Freetown", value: 0 },
           ],
         },
       ],
@@ -120,7 +118,7 @@ class Map extends React.Component {
             notMerge={true}
             lazyUpdate={true}
             option={this.state.option}
-            style={{ height: "450px", width: "100%" }}
+            style={{ height: "430px", width: "100%" }}
             className="react_for_echarts"
           />
         </CardContent>
