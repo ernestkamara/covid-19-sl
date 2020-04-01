@@ -57,10 +57,19 @@ const IndexPage = () => {
         m={1}
       >
         <Box flexGrow={1} p={1}>
+          <Map />
+        </Box>
+      </Box>
+      <Box
+        display="flex"
+        flexDirection={matches ? "row" : "column"}
+        p={1}
+        m={1}
+      >
+        <Box flexGrow={1} p={1}>
         <TestCenters
             title={"Available Test Centers"}
           />
-          <Map />
         </Box>
       </Box>
       <Box
