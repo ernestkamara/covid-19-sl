@@ -120,7 +120,7 @@ class Map extends React.Component {
             notMerge={true}
             lazyUpdate={true}
             option={this.state.option}
-            style={{ height: "450px", width: "100%" }}
+            style={{ height: "430px", width: "100%" }}
             className="react_for_echarts"
           />
         </CardContent>
