@@ -49,10 +49,6 @@ const IndexPage = () => {
             firebaseConnectionSetup={firebaseConnection("/global-summary")}
           />
         </Box>
-
-        {/* <Box flexGrow={1} p={1}>
-          <NewsFeed />
-        </Box> */}
       </Box>
       <Box
         display="flex"
@@ -65,6 +61,16 @@ const IndexPage = () => {
             title={"Available Test Centers"}
           />
           <Map />
+        </Box>
+      </Box>
+      <Box
+        display="flex"
+        flexDirection={matches ? "row" : "column"}
+        p={1}
+        m={1}
+      >
+        <Box flexGrow={1} p={1}>
+          <NewsFeed />
         </Box>
       </Box>
     </Layout>
