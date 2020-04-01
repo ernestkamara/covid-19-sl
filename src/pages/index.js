@@ -6,6 +6,7 @@ import Map from "../components/map"
 import Layout from "../components/layout"
 import Summary from "../components/summary"
 import NewsFeed from "../components/news-feed"
+import TestCenters from "../components/test-centers"
 
 import firebase from "../helper/firebase"
 
@@ -60,6 +61,9 @@ const IndexPage = () => {
         m={1}
       >
         <Box flexGrow={1} p={1}>
+        <TestCenters
+            title={"Available Test Centers"}
+          />
           <Map />
         </Box>
       </Box>
