@@ -23,7 +23,7 @@ const useStyles = makeStyles(theme => ({
 }))
 
 const Header = ({ siteTitle }) => {
-  const classes = useStyles()
+  const classes = useStyles()  
   return (
     <div className={classes.root}>
       <AppBar position="static" className={classes.appBar}>
