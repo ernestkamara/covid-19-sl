@@ -60,7 +60,7 @@ const IndexPage = () => {
           <Map />
         </Box>
       </Box>
-      <Box
+      {/* <Box
         display="flex"
         flexDirection={matches ? "row" : "column"}
         p={1}
@@ -71,8 +71,8 @@ const IndexPage = () => {
             title={"Available Test Centers"}
           />
         </Box>
-      </Box>
-      <Box
+      </Box> */}
+      {/* <Box
         display="flex"
         flexDirection={matches ? "row" : "column"}
         p={1}
@@ -81,7 +81,7 @@ const IndexPage = () => {
         <Box flexGrow={1} p={1}>
           <NewsFeed />
         </Box>
-      </Box>
+      </Box> */}
     </Layout>
   )
 }
