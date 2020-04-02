@@ -9,8 +9,8 @@ require("dotenv").config({
 module.exports = {
   siteMetadata: {
     title: `Covid 19 Update - Sierra Leone`,
-    description: `Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.`,
-    author: `@gatsbyjs`,
+    description: `Updates for the current COVID 19 Pandemic.`,
+    author: `Bunch of Sierra Leonean Developers`,
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
@@ -32,7 +32,7 @@ module.exports = {
         background_color: `#663399`,
         theme_color: `#663399`,
         display: `minimal-ui`,
-        icon: `src/images/gatsby-icon.png`, // This path is relative to the root of the site.
+        icon: `src/images/sierra-leone.png`, // This path is relative to the root of the site.
       },
     },
     // this (optional) plugin enables Progressive Web App + Offline functionality
