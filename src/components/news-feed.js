@@ -43,29 +43,35 @@ class NewsFeed extends React.Component {
     const context = this
 
     firebase
-      .database()
-      .ref("/news-feed")
-      .on("value", snapshot => {
-        var newsFromFirebase = snapshot.val()
-        if (newsFromFirebase === null) return
+      .firestore()
+      .collection("/news-feed")
+      .onSnapshot(querySnapshot => {
+        if (querySnapshot.exists === null) return
         var { rows } = context.state
-        // prevent recurive updates
         var newEntries = false
-        newsFromFirebase.forEach(entry => {
-          //check if it already has been rendered
+        querySnapshot.forEach(doc => {
+          var entry = {
+            id: doc.id,
+            title: doc.data().title,
+            source: doc.data().source,
+            link: doc.data().link,
+            date: doc
+              .data()
+              .date.toDate()
+              .toLocaleString("en-GB", {
+                year: "numeric",
+                month: "long",
+                day: "numeric",
+              }),
+          }
+
           if (!rows.some(row => row.id === entry.id)) {
-            var date = new Date(Date.parse(entry.date))
-            console.log(date)
-            entry.date = date.toLocaleString("en-GB", {
-              year: "numeric",
-              month: "long",
-              day: "numeric",
-            })
             rows.push(entry)
             newEntries = true
           }
+
+          if (newEntries) context.setState({ rows })
         })
-        if (newEntries) context.setState({ rows })
       })
   }
 
