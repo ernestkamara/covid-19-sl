@@ -35,6 +35,21 @@ module.exports = {
         icon: `src/images/sierra-leone.png`, // This path is relative to the root of the site.
       },
     },
+    {
+      resolve: "gatsby-plugin-firebase",
+      options: {
+        credentials: {          
+          apiKey: process.env.FB_API_KEY,
+          authDomain: process.env.FB_AUTH_DOMAIN,
+          databaseURL: process.env.FB_DB_URL,
+          projectId: process.env.FB_PROJECT_ID,
+          storageBucket: process.env.FB_STORAGE_BUCKET,
+          messagingSenderId: process.env.FB_MESSAGING_SENDER_ID,
+          appId: process.env.FB_APP_ID,
+          measurementId: process.env.FB_MEASUREMENT_ID,
+        }
+      }
+    }
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
     // `gatsby-plugin-offline`,
