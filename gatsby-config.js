@@ -1,7 +1,6 @@
 const activeEnv =
   process.env.GATSBY_ACTIVE_ENV || process.env.NODE_ENV || "development"
 
-console.log(process.env)
 require("dotenv").config({
   path: `.env.${activeEnv}`,
 })
@@ -9,8 +8,8 @@ require("dotenv").config({
 module.exports = {
   siteMetadata: {
     title: `Covid 19 Update - Sierra Leone`,
-    description: `Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.`,
-    author: `@gatsbyjs`,
+    description: `Updates for the current COVID 19 Pandemic in Sierra Leone.`,
+    author: `Bunch of Sierra Leonean Developers`,
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
@@ -32,13 +31,13 @@ module.exports = {
         background_color: `#663399`,
         theme_color: `#663399`,
         display: `minimal-ui`,
-        icon: `src/images/gatsby-icon.png`, // This path is relative to the root of the site.
+        icon: `src/images/sierra-leone.png`, // This path is relative to the root of the site.
       },
     },
     {
       resolve: "gatsby-plugin-firebase",
       options: {
-        credentials: {          
+        credentials: {
           apiKey: process.env.FB_API_KEY,
           authDomain: process.env.FB_AUTH_DOMAIN,
           databaseURL: process.env.FB_DB_URL,
@@ -47,9 +46,9 @@ module.exports = {
           messagingSenderId: process.env.FB_MESSAGING_SENDER_ID,
           appId: process.env.FB_APP_ID,
           measurementId: process.env.FB_MEASUREMENT_ID,
-        }
-      }
-    }
+        },
+      },
+    },
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
     // `gatsby-plugin-offline`,
