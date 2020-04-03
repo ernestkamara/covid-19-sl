@@ -38,6 +38,8 @@ const IndexPage = () => {
         flexDirection={matches ? "row" : "column"}
         p={1}
         m={1}
+        margin={matches ? "8px" : "0"}
+        padding={matches ? "8px" : "0"}
       >
         <Box flexGrow={1} p={1}>
           <Summary
@@ -57,6 +59,8 @@ const IndexPage = () => {
         flexDirection={matches ? "row" : "column"}
         p={1}
         m={1}
+        margin={matches ? "8px" : "0"}
+        padding={matches ? "8px" : "0"}
       >
         <Box flexGrow={1} p={1}>
           <Map />
@@ -79,6 +83,8 @@ const IndexPage = () => {
         flexDirection={matches ? "row" : "column"}
         p={1}
         m={1}
+        margin={matches ? "8px" : "0"}
+        padding={matches ? "8px" : "0"}
       >
         <Box flexGrow={1} p={1}>
           <NewsFeed />
