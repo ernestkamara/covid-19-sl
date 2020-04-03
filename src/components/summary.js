@@ -31,15 +31,15 @@ class Summary extends React.Component {
     return (
       <CustomCard title={title}>
         <Typography variant="h4" align="center">
-          {reports.confirmed}
+          {new Intl.NumberFormat().format(reports.confirmed)}
         </Typography>
         <Typography align="center">Confirmed</Typography>
         <Typography variant="h4" align="center">
-          {reports.recovered}
+          {new Intl.NumberFormat().format(reports.recovered)}
         </Typography>
         <Typography align="center">Recovered</Typography>
         <Typography variant="h4" align="center">
-          {reports.deaths}
+          {new Intl.NumberFormat().format(reports.deaths)}
         </Typography>
         <Typography align="center">Deaths</Typography>
       </CustomCard>
