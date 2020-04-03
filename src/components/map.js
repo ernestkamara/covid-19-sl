@@ -79,12 +79,13 @@ class Map extends React.Component {
           type: "map",
           mapType: "sierra-leone",
           roam: false,
+          showLegendSymbol: false,
           label: {
             normal: {
               show: true,
             },
             emphasis: {
-              show: true,
+              show: false,
             },
           },
           data: [
