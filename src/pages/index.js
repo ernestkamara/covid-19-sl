@@ -7,6 +7,7 @@ import Layout from "../components/layout"
 import Summary from "../components/summary"
 import NewsFeed from "../components/news-feed"
 import TestCenters from "../components/test-centers"
+import SEO from "../components/seo"
 
 import firebase from "../helper/firebase"
 
@@ -31,11 +32,14 @@ const IndexPage = () => {
   const matches = useMediaQuery("(min-width:600px)")
   return (
     <Layout>
+      <SEO title="SL" />
       <Box
         display="flex"
         flexDirection={matches ? "row" : "column"}
         p={1}
         m={1}
+        margin={matches ? "8px" : "0"}
+        padding={matches ? "8px" : "0"}
       >
         <Box flexGrow={1} p={1}>
           <Summary
@@ -55,6 +59,8 @@ const IndexPage = () => {
         flexDirection={matches ? "row" : "column"}
         p={1}
         m={1}
+        margin={matches ? "8px" : "0"}
+        padding={matches ? "8px" : "0"}
       >
         <Box flexGrow={1} p={1}>
           <Map />
@@ -72,16 +78,18 @@ const IndexPage = () => {
           />
         </Box>
       </Box> */}
-      {/* <Box
+      <Box
         display="flex"
         flexDirection={matches ? "row" : "column"}
         p={1}
         m={1}
+        margin={matches ? "8px" : "0"}
+        padding={matches ? "8px" : "0"}
       >
         <Box flexGrow={1} p={1}>
           <NewsFeed />
         </Box>
-      </Box> */}
+      </Box>
     </Layout>
   )
 }
