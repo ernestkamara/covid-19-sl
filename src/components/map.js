@@ -79,6 +79,8 @@ class Map extends React.Component {
           type: "map",
           mapType: "sierra-leone",
           roam: false,
+          zoom: 1.1,
+          showLegendSymbol: false,
           label: {
             normal: {
               show: true,
