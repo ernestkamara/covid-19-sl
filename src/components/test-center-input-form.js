@@ -3,7 +3,9 @@ import { makeStyles } from '@material-ui/core/styles';
 import TextField from '@material-ui/core/TextField';
 import CustomCard from "../components/custom-card"
 import Button from '@material-ui/core/Button';
-import Input from "@material-ui/core/Input";
+// import Input from "@material-ui/core/Input";
+import firebase from "gatsby-plugin-firebase"
+// import firebase from "../helper/firebase"
 const useStyles = makeStyles((theme) => ({
     root: {
       display: 'flex',
@@ -18,6 +20,7 @@ const useStyles = makeStyles((theme) => ({
         margin: theme.spacing(1),
       },
   }));
+
   
 class TestCenterInputForm extends React.Component {
 
@@ -42,16 +45,49 @@ class TestCenterInputForm extends React.Component {
         this.setState({
             [name]: value,
         })
+        console.log('Name value: ', name);
+        
     }
     handleSubmit = (event) => {
         // alert(`A name was submitted: ' + ${this.state.city} ${this.state.phone}`);
         console.log('Form Data', this.state);
         event.preventDefault();
+        const consent = true;
+        const da = this.state;
         
+        // TODO: add verifiation
+    if (!consent) {
+      alert("Please check the consent box")
+    } else {
+      // TODO: handle error and save to crashlytics 
+      firebase.auth().signInAnonymously().catch(function(error) {
+           // Handle Errors here.
+           var errorCode = error.code;
+           var errorMessage = error.message;
         
-      }
-render(){
+           if (errorCode === 'auth/operation-not-allowed') {
+             //alert('You must enable Anonymous auth in the Firebase Console.');
+           } else {
+            alert('Server down, please try again later!');
+             console.log(error);
 
+           }
+         }).then(function(crenditial) {
+            console.log(crenditial.user.uid);
+          var data = da//JSON.parse(this.state)
+          firebase
+          .firestore()
+          .collection("/admin-form")
+          .doc(crenditial.user.uid)
+          .set(data)
+         });
+    } 
+  }
+        
+
+
+render(){
+  // const [gender, setGender] = React.useState("")
     return (
         <CustomCard title={"Test Center Form"}>
           {/* const classes = useStyles();  */}

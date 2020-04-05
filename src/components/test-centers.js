@@ -10,7 +10,7 @@ import TableContainer from '@material-ui/core/TableContainer';
 import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
 import Paper from '@material-ui/core/Paper';
-
+import firebase from "gatsby-plugin-firebase"
 
 
 
@@ -19,6 +19,7 @@ const useStyles = () => makeStyles({
       minWidth: 650,
     },
   });
+
 
 class TestCenter extends React.Component{
     
@@ -41,6 +42,12 @@ class TestCenter extends React.Component{
             createData('Port Loko', 'Western Area', '34 Military Hospital', '111-222'),
             createData('Kono', 'Western Area', '34 Military Hospital', '111-222'),
           ];
+          // firebase.firestore().collection('admin-form').get().then((snapshot) => {
+          //   snapshot.forEach((doc) => {
+          //     console.log('tcdB: ', doc.data());
+              
+          //   })
+          // })
         return(
             <CustomCard title={title}>
         {/* <Typography variant="h4" align="center">

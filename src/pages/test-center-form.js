@@ -4,8 +4,6 @@ import useMediaQuery from "@material-ui/core/useMediaQuery"
 import TestCenterInputForm from '../components/test-center-input-form'
 import Layout from "../components/layout"
 
-import firebase from "../helper/firebase"
-
 // const firebaseConnection = key => {
 //     return context => {
 //       firebase
