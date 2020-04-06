@@ -9,7 +9,8 @@ import TableContainer from '@material-ui/core/TableContainer';
 import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
 import Paper from '@material-ui/core/Paper';
-import firebase from "gatsby-plugin-firebase"
+// import firebase from "gatsby-plugin-firebase"
+import firebase from '../helper/firebase'
 
 
 
@@ -31,10 +32,15 @@ class TestCenter extends React.Component{
     }
     componentDidMount(){
       const context = this
-      firebase.firestore().collection('admin-form').orderBy('city').get().then((snapshot) => {
-        snapshot.forEach((aDoc) => {
+      firebase.firestore().collection('admin-form').orderBy('city').onSnapshot((snapshot) => {//get().then((snapshot) => {
+        let changes = snapshot.docChanges();
+        console.log('Changes: ', changes);
+        
+        changes.forEach(change => {
+          console.log('the change: ', change.doc.data());
+          
           var { rows } = context.state
-            rows.push(aDoc.data());
+            rows.push(change.doc.data());
             // console.log('rows: ',rows)
             context.setState({ rows })
           

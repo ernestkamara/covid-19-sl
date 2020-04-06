@@ -4,8 +4,8 @@ import TextField from '@material-ui/core/TextField';
 import CustomCard from "./custom-card"
 import Button from '@material-ui/core/Button';
 // import Input from "@material-ui/core/Input";
-import firebase from "gatsby-plugin-firebase"
-// import firebase from "../helper/firebase"
+// import firebase from "gatsby-plugin-firebase"
+import firebase from "../helper/firebase"
 const useStyles = makeStyles((theme) => ({
     root: {
       display: 'flex',

@@ -3,6 +3,7 @@ import ReactEcharts from "echarts-for-react"
 import { Card, CardContent } from "@material-ui/core"
 
 import firebase from "../helper/firebase"
+// import firebase from "gatsby-plugin-firebase"
 require("../helper/sierra-leone.js")
 
 class Map extends React.Component {
