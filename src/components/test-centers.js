@@ -13,7 +13,6 @@ import Paper from '@material-ui/core/Paper';
 import firebase from '../helper/firebase'
 
 
-
 const useStyles = () => makeStyles({
     table: {
       minWidth: 650,
@@ -50,11 +49,7 @@ class TestCenter extends React.Component{
     render (){
         const { title } = this.props
         const classes = useStyles();
-        const {rows} = this.state
-        //creating dummy data for table
-          function createData(city, location, address, telephone) {
-            return { city, location, address, telephone };
-          }
+        const {rows} = this.state;
 
         return(
             <CustomCard title={title}>
