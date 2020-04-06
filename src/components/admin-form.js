@@ -1,11 +1,11 @@
 import React from 'react'
 import { makeStyles } from '@material-ui/core/styles';
 import TextField from '@material-ui/core/TextField';
-import CustomCard from "../components/custom-card"
+import CustomCard from "./custom-card"
 import Button from '@material-ui/core/Button';
 // import Input from "@material-ui/core/Input";
-import firebase from "gatsby-plugin-firebase"
-// import firebase from "../helper/firebase"
+// import firebase from "gatsby-plugin-firebase"
+import firebase from "../helper/firebase"
 const useStyles = makeStyles((theme) => ({
     root: {
       display: 'flex',
@@ -22,7 +22,7 @@ const useStyles = makeStyles((theme) => ({
   }));
 
   
-class TestCenterInputForm extends React.Component {
+class AdminForm extends React.Component {
 
     constructor(props){
         super(props);
@@ -30,7 +30,8 @@ class TestCenterInputForm extends React.Component {
             city: '',
             location: '',
             address: '',
-            phone: ''
+            phone: '',
+            date: Date.now()
         };
         // console.log('Porps:', props);
 
@@ -50,10 +51,10 @@ class TestCenterInputForm extends React.Component {
     }
     handleSubmit = (event) => {
         // alert(`A name was submitted: ' + ${this.state.city} ${this.state.phone}`);
-        console.log('Form Data', this.state);
+        // console.log('Form Data', this.state);
         event.preventDefault();
+        //will change this later
         const consent = true;
-        const da = this.state;
         
         // TODO: add verifiation
     if (!consent) {
@@ -74,12 +75,10 @@ class TestCenterInputForm extends React.Component {
            }
          }).then(function(crenditial) {
             console.log(crenditial.user.uid);
-          var data = da//JSON.parse(this.state)
+          var data = JSON.parse(this.state)
           firebase
           .firestore()
-          .collection("/admin-form")
-          .doc(crenditial.user.uid)
-          .set(data)
+          .collection("/admin-form").add(data)
          });
     } 
   }
@@ -87,11 +86,9 @@ class TestCenterInputForm extends React.Component {
 
 
 render(){
-  // const [gender, setGender] = React.useState("")
+  // const classes = useStyles(); 
     return (
         <CustomCard title={"Test Center Form"}>
-          {/* const classes = useStyles();  */}
-          {/* className={classes.root} */}
       <div >
         <div>
             <form onSubmit={this.handleSubmit}>
@@ -168,4 +165,4 @@ render(){
 }
   
 }
-export default TestCenterInputForm
+export default AdminForm
