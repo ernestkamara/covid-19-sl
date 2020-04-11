@@ -1,4 +1,3 @@
-/* eslint-disable no-unused-vars */
 import React from 'react'
 import { withStyles, makeStyles } from "@material-ui/core/styles"
 import CustomCard from "../components/custom-card"
@@ -34,14 +33,11 @@ class TestCenter extends React.Component{
       const context = this
       firebase.firestore().collection('admin-form').orderBy('city').onSnapshot(snapshot =>{//get().then((snapshot) => {
         let changes = snapshot.docChanges();
-        // console.log('Changes: ', changes);
 
         changes.forEach(change => {
-          // console.log('the change: ', change.doc.data());
 
          	  var { rows } = context.state
             rows.push(change.doc.data());
-            // console.log('rows: ',rows)	  
             context.setState({ rows })
           
         })
@@ -51,10 +47,6 @@ class TestCenter extends React.Component{
         const { title } = this.props
         const classes = useStyles();
         const {rows} = this.state
-        //creating dummy data for table
-          // function createData(city, location, address, telephone) {
-          //   return { city, location, address, telephone };
-          // }
 
         return(
             <CustomCard title={title}>
@@ -75,13 +67,13 @@ class TestCenter extends React.Component{
         <TableBody>
          
           {rows.map((row) => (
-            <TableRow key={row.city}>
+            <TableRow key={row.phoneNumber}>
               <TableCell component="th" scope="row">
                 {row.city}
               </TableCell>
               <TableCell align="right">{row.location}</TableCell>
               <TableCell align="right">{row.address}</TableCell>
-              <TableCell align="right">{row.phone}</TableCell>
+              <TableCell align="right">{row.phoneNumber}</TableCell>
               {/* <TableCell align="right">{row.protein}</TableCell> */}
             </TableRow>
           ))}
