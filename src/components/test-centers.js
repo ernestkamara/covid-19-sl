@@ -1,4 +1,3 @@
-/* eslint-disable no-unused-vars */
 import React from 'react'
 import { withStyles, makeStyles } from "@material-ui/core/styles"
 import CustomCard from "../components/custom-card"
@@ -33,6 +32,7 @@ class TestCenter extends React.Component{
       const context = this
       firebase.firestore().collection('admin-form').orderBy('city').onSnapshot((snapshot) => {//get().then((snapshot) => {
         let changes = snapshot.docChanges();
+<<<<<<< HEAD
         console.log('Changes: ', changes);
         
         changes.forEach(change => {
@@ -41,6 +41,13 @@ class TestCenter extends React.Component{
           var { rows } = context.state
             rows.push(change.doc.data());
             // console.log('rows: ',rows)
+=======
+
+        changes.forEach(change => {
+
+         	  var { rows } = context.state
+            rows.push(change.doc.data());
+>>>>>>> 971edeb... added one input field to form plus input validation
             context.setState({ rows })
           
         })
@@ -49,7 +56,11 @@ class TestCenter extends React.Component{
     render (){
         const { title } = this.props
         const classes = useStyles();
+<<<<<<< HEAD
         const {rows} = this.state;
+=======
+        const {rows} = this.state
+>>>>>>> 971edeb... added one input field to form plus input validation
 
         return(
             <CustomCard title={title}>
@@ -70,13 +81,13 @@ class TestCenter extends React.Component{
         <TableBody>
          
           {rows.map((row) => (
-            <TableRow key={row.city}>
+            <TableRow key={row.phoneNumber}>
               <TableCell component="th" scope="row">
                 {row.city}
               </TableCell>
               <TableCell align="right">{row.location}</TableCell>
               <TableCell align="right">{row.address}</TableCell>
-              <TableCell align="right">{row.phone}</TableCell>
+              <TableCell align="right">{row.phoneNumber}</TableCell>
               {/* <TableCell align="right">{row.protein}</TableCell> */}
             </TableRow>
           ))}
