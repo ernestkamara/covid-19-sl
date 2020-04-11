@@ -17,7 +17,7 @@ const TestCenterForm = () => {
        
           <Box flexGrow={1} p={1}>
           <AdminForm
-            //   title={"Add/Update Test Center"}
+              title={"Add/Update Test Center"}
             />
             {/* <Summary
               title={"Add/Update Test Center"}
